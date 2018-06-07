@@ -13,8 +13,8 @@ namespace TogglPlus
         private string TogglApiKey
         {
             get {
-                string key = Environment.GetEnvironmentVariable("TOGGL_COM_API_KEY");
-                if (key.Length > 0)
+                string key = Environment.GetEnvironmentVariable("TOGGL_COM_API_KEY", EnvironmentVariableTarget.User);
+                if (key?.Length > 0)
                 {
                     return key;
                 }

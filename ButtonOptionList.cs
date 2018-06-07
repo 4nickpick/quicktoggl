@@ -99,6 +99,34 @@ namespace TogglPlus
                 Text = "Misc meeting",
                 Project = "Common"
             });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.MediumPurple,
+                RequiresInput = false,
+                Text = "Building teams",
+                Project = "Common"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.MediumPurple,
+                RequiresInput = false,
+                Text = "Building tools",
+                Project = "Common"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.MediumPurple,
+                RequiresInput = false,
+                Text = "Building docs",
+                Project = "Common"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.Red,
+                RequiresInput = false,
+                Text = "Stop",
+                Project = ""
+            });
         }
     }
 }

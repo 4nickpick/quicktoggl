@@ -54,6 +54,12 @@
   <ItemGroup>
     <Compile Include="ButtonOption.cs" />
     <Compile Include="ButtonOptionList.cs" />
+    <Compile Include="frmStatic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatic.Designer.cs">
+      <DependentUpon>frmStatic.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="InteractWithToggl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmStatic.resx">
+      <DependentUpon>frmStatic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

@@ -16,7 +16,15 @@ namespace TogglPlus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            if(Environment.GetEnvironmentVariable("QUICKTOGGL_MODE", EnvironmentVariableTarget.User) == "Static")
+            {
+                Application.Run(new frmStatic());
+            }
+            else
+            {
+                Application.Run(new frmMain());
+            }
         }
     }
 }

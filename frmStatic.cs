@@ -40,7 +40,7 @@ namespace TogglPlus
             //this.TransparencyKey = Color.LimeGreen;
 
             // setup timer
-            timerStarted = TimeSpan.FromMinutes(0);
+            timerStarted = TimeSpan.FromSeconds(0);
             label1.Text = timerStarted.ToString();
 
             timer = new Timer();
@@ -52,7 +52,7 @@ namespace TogglPlus
         {
             _iwt = new InteractWithToggl();
 
-            _buttonDefns = new ButtonOptionList();
+            _buttonDefns = new NicksButtonOptionsList();
 
             _buckets = new ComboBox();
             this._buckets.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -84,7 +84,7 @@ namespace TogglPlus
         {
             _iwt.StopCurrentTask();
             timer.Stop();
-            timerStarted = TimeSpan.FromMinutes(0);
+            timerStarted = TimeSpan.FromSeconds(0);
             label1.Text = timerStarted.ToString();
         }
 
@@ -97,7 +97,7 @@ namespace TogglPlus
                 // this is the blank stop button
                 _iwt.StopCurrentTask();
                 timer.Stop();
-                timerStarted = TimeSpan.FromMinutes(0);
+                timerStarted = TimeSpan.FromSeconds(0);
                 label1.Text = timerStarted.ToString();
                 return;
             }
@@ -130,7 +130,7 @@ namespace TogglPlus
 
                 // reset timer
                 timer.Stop();
-                timerStarted = TimeSpan.FromMinutes(0);
+                timerStarted = TimeSpan.FromSeconds(0);
                 label1.Text = timerStarted.ToString();
 
                 _iwt.StartNewTask(newTaskName, matchingButtonDefn.Project);
@@ -150,6 +150,65 @@ namespace TogglPlus
                 timerStarted = timerStarted.Add(TimeSpan.FromSeconds(1));
                 label1.Text = timerStarted.ToString();
             }
+        }
+    }
+
+    class NicksButtonOptionsList : ButtonOptionList
+    {
+        public NicksButtonOptionsList()
+        {
+            Buttons = new List<ButtonOption>();
+
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.Orange,
+                RecommendsInput = true,
+                Text = "Ticket",
+                Project = "Maintenance"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.Orange,
+                RecommendsInput = false,
+                Text = "Releasing",
+                Project = "Maintenance"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.LightGreen,
+                RequiresInput = false,
+                RecommendsInput = true,
+                Text = "Sprinting",
+                Project = "Velocity"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.LightGreen,
+                RecommendsInput = false,
+                Text = "Sprint Meeting",
+                Project = "Other Velocity"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.MediumPurple,
+                RecommendsInput = false,
+                Text = "Lunch",
+                Project = "Common"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.DodgerBlue,
+                RecommendsInput = false,
+                Text = "Meeting",
+                Project = "Common"
+            });
+            Buttons.Add(new ButtonOption()
+            {
+                BackColor = Color.DodgerBlue,
+                RecommendsInput = false,
+                Text = "Misc Tasks",
+                Project = "Common"
+            });
         }
     }
 }

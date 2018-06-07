@@ -9,7 +9,7 @@ namespace TogglPlus
 {
     class ButtonOptionList
     {
-        public List<ButtonOption> Buttons { get; private set; }
+        public List<ButtonOption> Buttons { get; set; }
 
         public ButtonOptionList()
         {
